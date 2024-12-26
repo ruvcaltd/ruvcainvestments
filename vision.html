@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruvca Investments | Real Estate Investment Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/real-estate-bg3.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stats {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta {
+            background-color: #2c3e50;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c0392b;
+        }
+
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #e74c3c;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 0.5rem 0;
+        }
+
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-link:hover {
+            background-color: #f8f9fa;
+            color: #e74c3c;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 1rem 0;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-item {
+                margin: 0.5rem 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                padding-left: 1rem;
+            }
+        }
+
+        /* Adjust header padding to account for fixed navbar */
+        .header {
+            padding-top: 160px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ruvca Investments</a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vision.html" class="nav-link">Our Vision</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investing.html" class="nav-link">Investing With Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Our Funds</a>
+                    <div class="dropdown-content">
+                        <a href="prime-location.html" class="dropdown-link">Prime Location Fund</a>
+                        <a href="yield-maximizer.html" class="dropdown-link">Yield Maximizer Fund</a>
+                        <a href="affordable-housing.html" class="dropdown-link">Affordable Housing Fund</a>
+                        <a href="high-risk-reward.html" class="dropdown-link">High-Risk/High-Reward Fund</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="tailored.html" class="nav-link">Tailored Investments</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Our Vision</h1>
+            <p>Building Wealth Through Property Investment</p>
+        </div>
+    </header>
+
+    <section class="vision-content" style="padding: 80px 0; background-color: #fff;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <p style="margin-bottom: 2rem;">
+                    Investing in UK property is no longer a privilege reserved for the wealthy; it is an empowering opportunity now available to everyone, regardless of background, financial starting point, or location. Whether you're a seasoned investor or taking your first steps into property investment, the UK property market offers a reliable and thriving platform for financial growth and security. From anywhere in the world, you can tap into this market's stability, performance, and consistently competitive returns.
+                </p>
+                
+                <div style="margin: 3rem 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="images/uk-cityscape.jpg" alt="Modern UK cityscape" style="width: 100%; height: auto; display: block;">
+                </div>
+                
+                <p style="margin-bottom: 2rem;">
+                    The UK property market has a proven legacy of resilience and profitability, even in times of economic uncertainty. By investing here, you are doing more than purchasing a property—you are laying the foundation for a brighter financial future. This is your chance to secure a steady income, achieve significant capital growth, and create a lasting legacy for your loved ones. Property investment is not just about numbers; it is about giving yourself and your family the freedom, opportunities, and security to thrive across generations.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 3rem 0;">
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/modern-apartment.jpg" alt="Modern apartment interior" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/traditional-house.jpg" alt="Traditional UK house" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                
+                <p style="margin-bottom: 2rem;">
+                    We understand that the idea of investing in property, especially in a foreign market, can feel overwhelming or out of reach. That is why we are here every step of the way, offering more than just services—we provide unwavering support, guidance, and expertise. Our team of seasoned mortgage advisors, legal professionals, and investment specialists are dedicated to making the process seamless, transparent, and tailored to your needs. From navigating financing options to ensuring compliance with UK regulations, we take care of the complexities so you can focus on achieving your goals.
+                </p>
+                
+                <div style="margin: 3rem 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="images/investment-meeting.jpg" alt="Investment consultation" style="width: 100%; height: auto; display: block;">
+                </div>
+                
+                <p style="margin-bottom: 2rem;">
+                    This journey is not just about financial transactions; it is about building confidence and creating connections. We believe that property investment is for everyone, and we are here to ensure that barriers like location, experience, or unfamiliarity with the UK market do not stand in your way. With us, you will find a partner who values your success as much as you do—someone who is as committed to your dreams as you are.
+                </p>
+                
+                <p style="margin-bottom: 2rem;">
+                    Investing in the UK property market is more than a financial decision—it is an act of empowerment and a testament to your belief in a prosperous future. Together, we can transform aspirations into reality, helping you secure the income, wealth, and legacy you deserve. This is your opportunity to build not just properties, but possibilities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Investment Journey?</h2>
+            <p>Join our community of successful investors and start building your real estate portfolio today.</p>
+            <a href="contact.html" class="button">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 20px 0;">
+            <p>© 2023 Ruvca Investments Limited. All rights reserved.</p>
+            <p>40 Chestnut Grove, Dartford - DA2 7PG</p>
+            <p>Email: <a href="mailto:contact@ruvca.com">contact@ruvca.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

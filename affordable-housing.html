@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruvca Investments | Real Estate Investment Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bg2.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stats {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta {
+            background-color: #2c3e50;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c0392b;
+        }
+
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #e74c3c;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 0.5rem 0;
+        }
+
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-link:hover {
+            background-color: #f8f9fa;
+            color: #e74c3c;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 1rem 0;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-item {
+                margin: 0.5rem 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                padding-left: 1rem;
+            }
+        }
+
+        /* Adjust header padding to account for fixed navbar */
+        .header {
+            padding-top: 160px;
+        }
+
+        .fund-details {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .fund-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .fund-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .fund-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fund-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .fund-card p {
+            color: #666;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ruvca Investments</a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vision.html" class="nav-link">Our Vision</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investing.html" class="nav-link">Investing With Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Our Funds</a>
+                    <div class="dropdown-content">
+                        <a href="prime-location.html" class="dropdown-link">Prime Location Fund</a>
+                        <a href="yield-maximizer.html" class="dropdown-link">Yield Maximizer Fund</a>
+                        <a href="affordable-housing.html" class="dropdown-link">Affordable Housing Fund</a>
+                        <a href="high-risk-reward.html" class="dropdown-link">High-Risk/High-Reward Fund</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="tailored.html" class="nav-link">Tailored Investments</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Affordable Housing Fund</h1>
+            <p>Supporting Communities Through Sustainable Housing Solutions</p>
+        </div>
+    </header>
+
+    <section class="fund-details">
+        <div class="container">
+            <div class="fund-image">
+                <img src="images/affordable-houses.jpg" alt="Modern affordable housing development in a commuter town" style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px; margin: 40px 0;">
+            </div>
+            
+            <div class="fund-grid">
+                <div class="fund-card">
+                    <h3>Investment Focus</h3>
+                    <p>Strategic investments in affordable rental properties within commuter zones and emerging regeneration areas, meeting the growing demand for quality, accessible housing.</p>
+                </div>
+                
+                <div class="fund-card">
+                    <h3>Target Areas</h3>
+                    <p>Well-connected locations including outer London boroughs and key commuter towns such as Luton, Reading, and Slough, offering excellent transport links to major employment hubs.</p>
+                </div>
+                
+                <div class="fund-card">
+                    <h3>Rental Return</h3>
+                    <p>Steady and moderate returns supported by consistent demand and government initiatives promoting affordable housing development.</p>
+                </div>
+                
+                <div class="fund-card">
+                    <h3>Tenant Profile</h3>
+                    <p>Essential workers, young families, and first-time renters seeking quality accommodation at accessible price points, creating a diverse and stable tenant base.</p>
+                </div>
+                
+                <div class="fund-card">
+                    <h3>Risk Profile</h3>
+                    <p>Moderate risk level, influenced by local economic conditions but supported by fundamental housing demand and government housing policies.</p>
+                </div>
+                
+                <div class="fund-card">
+                    <h3>Expected Returns</h3>
+                    <p>Balanced investment approach offering reliable rental income combined with potential for moderate capital appreciation in developing areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Investment Journey?</h2>
+            <p>Join our community of successful investors and start building your real estate portfolio today.</p>
+            <a href="contact.html" class="button">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 20px 0;">
+            <p>© 2023 Ruvca Investments Limited. All rights reserved.</p>
+            <p>40 Chestnut Grove, Dartford - DA2 7PG</p>
+            <p>Email: <a href="mailto:contact@ruvca.com">contact@ruvca.com</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
