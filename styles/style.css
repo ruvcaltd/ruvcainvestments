@@ -10,6 +10,26 @@ body {
     color: #333;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.logo img {
+    height: 32px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+
 .header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/real-estate-bg.jpg');
     background-size: cover;
@@ -94,10 +114,22 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-weight: 700;
     font-size: 1.5rem;
     color: #2c3e50;
     text-decoration: none;
+    line-height: 1;
+}
+
+.logo img {
+    height: 32px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 2px;
 }
 
 .nav-menu {

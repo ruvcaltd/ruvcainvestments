@@ -105,10 +105,22 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-weight: 700;
             font-size: 1.5rem;
             color: #2c3e50;
             text-decoration: none;
+            line-height: 1;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 2px;
         }
 
         .nav-menu {
@@ -212,7 +224,7 @@
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Ruvca Investments</a>
+            <a href="index.html" class="logo"><img src="images/logo2.png" alt="Ruvca Investments Logo">Ruvca Investments</a>
             <button class="mobile-menu-btn">☰</button>
             <ul class="nav-menu">
                 <li class="nav-item">
