@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residents/Tenants Area | Ruvca Investments</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/london-top.avif');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 2px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c0392b;
+        }
+
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #e74c3c;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 0.5rem 0;
+        }
+
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-link:hover {
+            background-color: #f8f9fa;
+            color: #e74c3c;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 1rem 0;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-item {
+                margin: 0.5rem 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                padding-left: 1rem;
+            }
+        }
+
+        /* Adjust header padding to account for fixed navbar */
+        .header {
+            padding-top: 160px;
+        }
+
+        .content {
+            padding: 80px 0;
+        }
+
+        .intro-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .benefit-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .cta-section {
+            background-color: #2c3e50;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .portal-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .portal-button:hover {
+            background-color: #c0392b;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="images/logo2.png" alt="Ruvca Investments Logo">Ruvca Investments</a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="vision.html" class="nav-link">Our Vision</a>
+                </li>
+                <li class="nav-item">
+                    <a href="investing.html" class="nav-link">Investing With Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Residents & Tenants Area</h1>
+            <p>We're here to support you</p>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="container">
+            <div class="intro-section">
+                <h2>Your Home, Your Community</h2>
+                <p class="lead">At Ruvca Investments, we believe that our properties are more than just investments—they are homes for people. We are deeply committed to providing excellent living conditions and exceptional support to all our residents and tenants.</p>
+                <p>We take pride in maintaining our properties to the highest standards and fostering vibrant communities where people can thrive. From responsive maintenance services to community events, we're dedicated to ensuring that you have a comfortable and enriching living experience.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Quality Living Spaces</h3>
+                    <p>We maintain our properties with meticulous care, ensuring that every resident enjoys clean, safe, and comfortable living environments. Regular inspections and proactive maintenance are part of our commitment to you.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Responsive Support</h3>
+                    <p>Our dedicated maintenance team is always ready to address your concerns. Whether it's a maintenance request or a general inquiry, we strive to respond quickly and professionally to meet your needs.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Community Focus</h3>
+                    <p>We believe in building strong communities. We organize events, maintain common areas, and foster a sense of belonging among all residents. Your feedback and engagement are invaluable to us.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Transparent Communication</h3>
+                    <p>We keep you informed about property developments, maintenance schedules, and important updates. Clear communication is essential for building trust and ensuring everyone is on the same page.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Safety & Security</h3>
+                    <p>Your safety is our priority. We implement comprehensive security measures and safety protocols to ensure that our properties remain secure and protected at all times.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Professional Management</h3>
+                    <p>Our experienced property management team works around the clock to ensure that all aspects of property operations run smoothly, allowing you to focus on enjoying your home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Maintenance or Support?</h2>
+            <p>Access our property maintenance portal for quick and efficient service requests.</p>
+            <p>Submit maintenance requests, track their status, and communicate with our support team.</p>
+            <a href="https://ruvcamaintenance.azurewebsites.net/" target="_blank" rel="noopener noreferrer" class="portal-button">Go to Property Maintenance Portal</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 20px 0;">
+            <p>© 2023 Ruvca Investments Limited. All rights reserved.</p>
+            <p>40 Chestnut Grove, Dartford - DA2 7PG</p>
+            <p>Email: <a href="mailto:contact@ruvca.com">contact@ruvca.com</a></p>
+            <p>Ruvca Investments Ltd is an active company incorporated on 14 January 2019 with the registered office located in Dartford, Kent with company registration number: <strong>11764914</strong>. <a href="https://find-and-update.company-information.service.gov.uk/company/11764914" target="_blank">More info</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
