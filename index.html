@@ -226,6 +226,24 @@
             gap: 1rem;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            flex: 0 1 auto;
+        }
+
+        @media (max-width: 768px) {
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
         }
 
         .primary-button {
